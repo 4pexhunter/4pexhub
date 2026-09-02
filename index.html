@@ -144,6 +144,8 @@
   }
   .badge-row{display:flex; gap:10px; flex-wrap:wrap; align-items:center;}
   .badge-row img{display:block; image-rendering:pixelated;}
+  .badge-row a{display:block; line-height:0; transition:opacity 0.15s ease;}
+  .badge-row a:hover{opacity:0.75;}
 
   @media (max-width:560px){
     .ext-grid{grid-template-columns:1fr;}
@@ -258,15 +260,15 @@ PS: This program was created because of an assignment from Mr. Ilham</p>
     </div>
     <div class="badge-box">
       <div class="badge-row">
-        <img src="button.gif" alt="4pexhunter">
-        <img src="firefoxget.gif" alt="Take back the web - Firefox">
-        <img src="html3_s1.gif" alt="HTML3">
-        <img src="ie3.gif" alt="Internet Explorer">
+        <a href="#home"><img src="button.gif" alt="4pexhunter"></a>
+        <a href="https://www.mozilla.org/firefox/" target="_blank" rel="noopener"><img src="firefoxget.gif" alt="Take back the web - Firefox"></a>
+        <a href="https://www.w3.org/" target="_blank" rel="noopener"><img src="html3_s1.gif" alt="HTML3"></a>
+        <a href="https://en.wikipedia.org/wiki/Internet_Explorer_3" target="_blank" rel="noopener"><img src="ie3.gif" alt="Internet Explorer"></a>
         <img src="sbeve.png" alt="S:\dir">
-        <img src="tor.gif" alt="Tor">
-        <img src="visitmini.gif" alt="Linux Online">
-        <img src="debian-powered.gif" alt="Debian Powered">
-        <img src="discord_now.gif" alt="Discord Now">
+        <a href="https://www.torproject.org/" target="_blank" rel="noopener"><img src="tor.gif" alt="Tor"></a>
+        <a href="https://www.linux.org/" target="_blank" rel="noopener"><img src="visitmini.gif" alt="Linux Online"></a>
+        <a href="https://www.debian.org/" target="_blank" rel="noopener"><img src="debian-powered.gif" alt="Debian Powered"></a>
+        <a href="https://discord.com/" target="_blank" rel="noopener"><img src="discord_now.gif" alt="Discord Now"></a>
       </div>
     </div>
   </section>
