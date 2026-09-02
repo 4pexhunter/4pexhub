@@ -41,12 +41,13 @@
   .navbar .tag{
     font-family:var(--mono); font-size:12px; color:var(--blue-dim);
   }
-  .navlinks{display:flex; gap:20px;}
+  .navlinks{display:flex; gap:10px;}
   .navlinks a{
     font-family:var(--mono); font-size:13px; color:var(--paper);
-    text-decoration:none;
+    text-decoration:none; border:1px solid var(--line);
+    padding:8px 14px; transition:border-color 0.15s ease, color 0.15s ease;
   }
-  .navlinks a:hover{color:var(--blue);}
+  .navlinks a:hover{border-color:var(--blue); color:var(--blue);}
 
   .hero{padding:80px 0 56px;}
   .callsign{
@@ -123,8 +124,31 @@
     font-family:var(--mono); font-size:11px; color:var(--blue-dim);
   }
 
+  .ext-grid{display:grid; grid-template-columns:1fr 1fr; gap:12px;}
+  .ext-card{
+    display:flex; align-items:center; gap:12px;
+    border:1px solid var(--line); background:var(--panel);
+    padding:16px; text-decoration:none; color:var(--paper);
+    transition:border-color 0.15s ease;
+  }
+  .ext-card:hover{border-color:var(--blue);}
+  .ext-card svg{color:var(--blue-dim); flex-shrink:0;}
+  .ext-card:hover svg{color:var(--blue);}
+  .ext-text{display:flex; flex-direction:column; gap:2px; overflow:hidden;}
+  .ext-text .k{font-family:var(--mono); font-size:11px; color:var(--blue-dim); letter-spacing:0.04em;}
+  .ext-text .v{font-family:var(--mono); font-size:13px; color:var(--paper); white-space:nowrap; overflow:hidden; text-overflow:ellipsis;}
+
+  .badge-box{
+    border:1px solid var(--line); background:var(--panel);
+    padding:20px;
+  }
+  .badge-row{display:flex; gap:8px; flex-wrap:wrap; align-items:center;}
+  .badge-row img{display:block; height:20px;}
+
   @media (max-width:560px){
-    .navlinks{gap:14px;}
+    .ext-grid{grid-template-columns:1fr;}
+    .navlinks{gap:8px;}
+    .navlinks a{padding:6px 10px; font-size:12px;}
   }
 </style>
 </head>
@@ -136,6 +160,7 @@
     <div class="navlinks">
       <a href="#home">home</a>
       <a href="#projects">projects</a>
+      <a href="#externals">externals</a>
       <a href="https://github.com/4pexhunter" target="_blank" rel="noopener">github</a>
     </div>
   </div>
@@ -194,6 +219,49 @@ Built as a small programming project, it demonstrates how fundamental C# concept
 PS: This program was created because of an assignment from Mr. Ilham</p>
         <div class="tags"><span>pos</span><span>C#</span><span>.NET</span><span>MIT</span><span>v0.0.1</span></div>
         <a class="btn" href="https://github.com/4pexhunter/MinangPOS">view on github →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="externals">
+    <div class="section-head">
+      <h2>externals</h2>
+    </div>
+    <div class="ext-grid">
+      <a class="ext-card" href="https://github.com/4pexhunter" target="_blank" rel="noopener">
+        <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8Z"/></svg>
+        <div class="ext-text">
+          <span class="k">github</span>
+          <span class="v">4pexhunter</span>
+        </div>
+      </a>
+      <a class="ext-card" href="mailto:4pexhunterdev@gmail.com">
+        <svg viewBox="0 0 20 16" width="20" height="16" fill="none" stroke="currentColor" stroke-width="1.4"><rect x="1" y="1" width="18" height="14" rx="1.5"/><path d="M1.5 2.5 10 9l8.5-6.5"/></svg>
+        <div class="ext-text">
+          <span class="k">email</span>
+          <span class="v">4pexhunterdev@gmail.com</span>
+        </div>
+      </a>
+      <div class="ext-card">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M20.3 5.4A18.5 18.5 0 0 0 15.7 4c-.2.4-.5.9-.6 1.3a17 17 0 0 0-6.2 0C8.7 4.9 8.4 4.4 8.3 4a18.4 18.4 0 0 0-4.6 1.4C1.6 9.1 1 12.7 1.3 16.3a18.6 18.6 0 0 0 5.7 2.9c.5-.6.9-1.3 1.2-2a12 12 0 0 1-1.9-.9l.5-.4a13.2 13.2 0 0 0 11.4 0l.5.4c-.6.4-1.3.7-1.9.9.3.7.7 1.4 1.2 2a18.5 18.5 0 0 0 5.7-2.9c.4-4.2-.6-7.7-2.7-10.9ZM8.7 14.1c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8c.9 0 1.6.8 1.6 1.8s-.7 1.8-1.6 1.8Zm6.6 0c-.9 0-1.6-.8-1.6-1.8s.7-1.8 1.6-1.8c.9 0 1.6.8 1.6 1.8s-.7 1.8-1.6 1.8Z"/></svg>
+        <div class="ext-text">
+          <span class="k">discord</span>
+          <span class="v">4pexhunter</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="badges">
+    <div class="section-head">
+      <h2>badges</h2>
+    </div>
+    <div class="badge-box">
+      <div class="badge-row">
+        <img src="https://img.shields.io/badge/lang-C%23-5b8def?style=flat-square" alt="C#">
+        <img src="https://img.shields.io/badge/framework-.NET-5b8def?style=flat-square" alt=".NET">
+        <img src="https://img.shields.io/badge/license-MIT-5b8def?style=flat-square" alt="MIT License">
+        <img src="https://img.shields.io/badge/status-online-5b8def?style=flat-square" alt="Status: Online">
       </div>
     </div>
   </section>
